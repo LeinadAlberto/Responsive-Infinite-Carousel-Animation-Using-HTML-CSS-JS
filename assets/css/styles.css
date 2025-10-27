@@ -121,10 +121,28 @@ img {
 .carousel__content {
 	width: max-content;
 	display: flex;
+	animation: scroll 18s linear infinite;
+}
+
+.carousel__reverse {
+	flex-direction: row-reverse;
+	animation-direction: reverse;
+	animation-delay: -1s;
+}
+
+.carousel__content:hover {
+	animation-play-state: paused;
 }
 
 /* Infinite scroll animation */
-
+@keyframes scroll {
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(-50%);
+	}
+}
 
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
